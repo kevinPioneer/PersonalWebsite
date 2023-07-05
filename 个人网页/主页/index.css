@@ -1,0 +1,239 @@
+/* 重置盒模型 */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 设置默认字体和颜色 */
+body {
+  font-family: Arial, sans-serif;
+  font-size: 24px;
+  color: #ffffff;
+  display: flex;
+  line-height: 5vh;
+  overflow-x: hidden;
+}
+
+/* 清除列表样式 */
+ul,
+ol {
+  list-style: none;
+}
+
+/* 清除链接样式 */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* 清除按钮样式 */
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+/* 清除表单样式 */
+input,
+textarea,
+select {
+  border: none;
+  outline: none;
+  background: none;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  color: #333;
+}
+
+/* 隐藏页面光标 */
+html, body {
+  caret-color: transparent;
+}
+
+a {
+  color: #c3ef97;
+  font-weight: 600;
+}
+body {
+  /* 背景图片显示失败则显示背景色 */
+  background: #333;
+  /* 声明背景图片 */
+  background-image: url(../img/bg.jpg);
+  /* 声明图片大小 */
+  background-size: cover;
+  /* 声明图片位置 */
+  background-position: center center;
+  /* 声明是否滚动 */
+  background-attachment: fixed;
+  z-index: -100;
+}
+
+/* 蒙版 */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  backdrop-filter: blur(10px);
+}
+/* bigbox盒子 */
+.bigbox {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+}
+/* left盒子 */
+/* 占位盒子 */
+.Lleft {
+  width: 61.8vw;
+  height: 100vh;
+}
+.left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 2px 2px 5px 1px #d9f7be;
+  width: 61.8vw;
+  height: 100vh;
+  position: fixed;
+}
+
+/* 简介 */
+.left-conter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  margin-bottom: 20vh;
+}
+
+.img {
+  width: 250px;
+  height: 250px;
+  border-radius: 100%;
+  background-repeat: no-repeat;
+  background-image: url(../img/ZKH.png);
+  border: 6px solid #d9f7be ;
+  background-position: center center;
+}
+
+.self-introduction {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  line-height: 200%;
+  margin-top: 5vh;
+}
+
+/* right */
+.right {
+  display: flex;
+  flex-direction: column;
+  width: 38.2vw;
+  height: 100vh;
+  align-items: center;
+}
+
+.dNav {
+  display: flex;
+  height: 10%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  padding: 5vh;
+  box-shadow: 2px 2px 5px 1px #d9f7be;
+}
+
+section {
+  width: 100%;
+  height: 100vh;
+}
+
+.right h2 {
+  color: #ffffff;
+}
+
+.project {
+  border-left: 3px solid #ffffff;
+  margin-left: 1vw;
+  padding-left: 0.3vw;
+}
+
+.r-dl {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 1vh;
+  box-shadow: 2px 2px 5px 1px #d9f7be;
+  padding-top: 5vh;
+}
+
+.r-dl dt {
+  color: #ffffff;
+  font-size: 1.5rem;
+  margin-bottom: 1vh;
+  text-align: center;
+  line-height: 2rem;
+}
+
+.r-dl a {
+  color: #c3ef97;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.r-dl a:hover {
+  color: #ffffff;
+}
+
+/* 媒体查询 */
+@media screen and (max-width: 998px) {
+  body {
+    overflow-y: hidden;
+  }
+
+  .bigbox {
+    overflow: scroll;
+    flex-direction: column;
+  }
+
+  .bigbox::-webkit-scrollbar {
+    display: none;
+  }
+
+  .Lleft {
+    width: 0vw;
+    height: 0vh;
+  }
+
+  .left {
+    width: 100vw;
+    height: auto;
+    position: static;
+    border-right: 1px solid #d9f7be;
+    box-shadow: 3px 3px 5px 1px #d9f7be;
+  }
+
+  .right {
+    width: 100vw;
+    height: auto;
+    margin-top: 2vh;
+  }
+
+  .project {
+    padding-top: -0.6vh;
+  }
+
+  .dNav {
+    margin-top: 5vh;
+  }
+}

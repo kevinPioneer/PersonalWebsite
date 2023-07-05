@@ -1,0 +1,152 @@
+/* 重置盒模型 */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 设置默认字体和颜色 */
+body {
+  font-family: Arial, sans-serif;
+  font-size: 30px;
+  color: #fbed09;
+}
+
+@font-face {
+  font-family: "阿里妈妈刀隶体 Regular";
+  font-weight: 400;
+  src: url("/iconfont/AlimamaDaoLiTi.woff2") format("woff2"),
+    url("/iconfont/AlimamaDaoLiTi.woff") format("woff");
+  font-display: swap;
+}
+
+/* 清除列表样式 */
+ul,
+ol {
+  list-style: none;
+}
+
+/* 清除链接样式 */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* 清除按钮样式 */
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+/* 清除表单样式 */
+input,
+textarea,
+select {
+  border: none;
+  outline: none;
+  background: none;
+  font-family: Arial, sans-serif;
+  font-size: 30px;
+  color: #fbed09;
+}
+body {
+  background-color: #f5fad8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+.bigbox {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 80vw;
+  height: 90vh;
+  border-radius: 3vw;
+}
+.box2 {
+  width: 79vw;
+  height: 77vh;
+  text-align: center;
+  border:3px solid #aed0ee;
+}
+.B2-INPUT {
+  width: 74vw;
+  height: 72vh;
+  border:3px solid #aed0ee;
+  margin-top: 1vw;
+}
+.box1 {
+  width: 100vw;
+  height: 17vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding-bottom: 6vh;
+}
+#randomButton {
+  background: linear-gradient(to right, #e10410 0%, #645570 50%);
+  width: 25vw;
+  height: 8vh;
+  border-radius: 3vw;
+  margin-left: 14vh;
+  margin-bottom: 1.5vh;
+  font-family: "阿里妈妈刀隶体 Regular", Arial, sans-serif;
+  font-size : 30px;
+  color: #7c191e;
+}
+#randomValues {
+  width: 49vw;
+  height: 9vh;
+  line-height: 9vh;
+  text-align: center;
+  color: #00fcfd;
+  padding-right: 17vw;
+  font-family: "阿里妈妈刀隶体 Regular", Arial, sans-serif;
+}
+::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  color: #fbed09;
+  text-align: center;
+  line-height: 8vh;
+  font-family: "阿里妈妈刀隶体 Regular", Arial, sans-serif;
+}
+
+/* 隐藏页面光标 */
+html,
+body {
+  caret-color: transparent;
+}
+
+body {
+  /* 背景图片显示失败则显示背景色 */
+  background: #333;
+  /* 声明背景图片 */
+  background-image: url(../img/wallhaven-gp2qre.png);
+  /* 声明图片大小 */
+  background-size: cover;
+  /* 声明图片位置 */
+  background-position: center center;
+  /* 声明是否滚动 */
+  background-attachment: fixed;
+  z-index: -100;
+}
+
+/* 蒙版 */
+.bigbox::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 80vw;
+  height: 90vh;
+  margin-top: 5vh;
+  margin-left: 10vw;
+  z-index: -1;
+  backdrop-filter: blur(12px);
+  border-radius: 3vw;
+}
